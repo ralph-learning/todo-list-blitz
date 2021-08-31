@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode, Suspense } from "react"
 import { Head } from "blitz"
 
 type LayoutProps = {
@@ -14,7 +14,7 @@ const Layout = ({ title, children }: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {children}
+      <Suspense fallback="Loading...">{children}</Suspense>
     </>
   )
 }
